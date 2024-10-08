@@ -41,7 +41,7 @@ public class Main {
                     System.out.println("خداحافظ.. اطلاعات با موفقیت ذخیره شد!");
                     break;
                 default:
-                    System.out.println("انتخاب نامعتبر. لطفاً دوباره تلاش کنید.");
+                    System.out.println("انتخاب نامعتبر. لطفاً دوباره تلاش کنید..");
             }
         } while (choice != "5");
     }
