@@ -11,6 +11,8 @@ class Planet {
     private double distanceFromSun; // فاصله از خورشید
     private static Set<String> planetNames = new HashSet<>(); // مجموعه نام‌های سیاره جهت بررسی یونیک بودن
     private Set<String> moons; // مجموعه قمرها
+
+    private int moonsCount;
     private boolean hasLife; // مشخصه برای بررسی وجود حیات
     private Set<String> resources; // مجموعه منابع طبیعی سیاره
 
@@ -66,6 +68,10 @@ class Planet {
     // متد برای بازگرداندن تعداد قمرها
     public int getMoonCount() {
         return moons.size(); // برگرداندن تعداد قمرها
+    }
+    // متد برای تعیین تعداد قمرها
+    public void setMoonCount(int CountMoon) {
+        this.moonsCount = CountMoon;
     }
 
     // متد برای نمایش قمرها

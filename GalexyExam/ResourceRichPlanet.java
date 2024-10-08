@@ -30,6 +30,7 @@ class ResourceRichPlanet extends Planet {
     public List<String> getNaturalResources() {
         return naturalResources;
     }
+
     // متد برای بررسی پشتیبانی از منابع طبیعی
     public boolean hasResources() {
         return hasResources;

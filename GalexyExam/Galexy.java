@@ -2,10 +2,13 @@ package GalexyExam;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Galexy {
     private String Name;
     private List<Planet> Planets= new ArrayList<>();
+    private Map<String, Planet> planetSet;
+
 
     //Constructors:
 
@@ -22,6 +25,9 @@ public class Galexy {
 
     public List<Planet> getPlanets() {
         return Planets;
+    }
+    public Planet getPlanetByGalexyName(String name) {
+        return planetSet.get(name.toLowerCase());
     }
 
     public List<Planet> AddPlanet(Planet planet){
