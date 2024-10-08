@@ -4,7 +4,7 @@ public class LifeSupportingPlanet extends Planet{
     private boolean hasLife; // مشخص می کند که آیا حیات بر روی سیاره وجود دارد یا خیر
 
     public LifeSupportingPlanet(String name, PlanetType type, int moons, double distanceFromSun, boolean hasLife) {
-        super(name); // صدا زدن سازنده کلاس پایه
+        super(name, type, distanceFromSun, moons); // صدا زدن سازنده کلاس پایه
         this.hasLife = hasLife;
     }
 

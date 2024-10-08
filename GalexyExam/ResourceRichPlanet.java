@@ -2,6 +2,7 @@ package GalexyExam;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 // کلاس ResourceRichPlanet
 class ResourceRichPlanet extends Planet {
@@ -10,8 +11,8 @@ class ResourceRichPlanet extends Planet {
 
 
     // سازنده برای ResourceRichPlanet  
-    public ResourceRichPlanet(String name, boolean hasResources) {
-        super(name); // صدا زدن سازنده کلاس پایه  
+    public ResourceRichPlanet(String name, PlanetType type, int moons, double distance, boolean hasResources) {
+        super(name, type, distance, moons); // صدا زدن سازنده کلاس پایه
         this.naturalResources = new ArrayList<>(); // فهرست منابع جدید ایجاد می‌شود
         this.hasResources = hasResources;  // تنظیم وضعیت پشتیبانی
 

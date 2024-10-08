@@ -10,7 +10,7 @@ class Planet {
     //private int moons;           // تعداد قمرها
     private double distanceFromSun; // فاصله از خورشید
     private static Set<String> planetNames = new HashSet<>(); // مجموعه نام‌های سیاره جهت بررسی یونیک بودن
-    private Set<String> moons; // مجموعه قمرها
+    private Set<String> moons=new HashSet<>(); // مجموعه قمرها
 
     private int moonsCount;
     private boolean hasLife; // مشخصه برای بررسی وجود حیات
@@ -18,14 +18,14 @@ class Planet {
 
 
 
-    public Planet(String name) {
+    public Planet(String name, PlanetType type, double distance, int moonsCount) {
         if (planetNames.contains(name)) {
             throw new IllegalArgumentException("The planet name " + name + " is already taken.");
         }
         planetNames.add(name); // افزودن نام سیاره به مجموعه
         this.name = name;
         this.type = type;
-        this.moons = new HashSet<>(); // فهرست قمرها ایجاد می‌شود
+        this.moonsCount = moonsCount; // فهرست قمرها ایجاد می‌شود
         this.distanceFromSun = distanceFromSun;
         this.hasLife = hasLife; // مقداردهی مشخصه وجود حیات
         this.resources = new HashSet<>(); // فهرست منابع طبیعی ایجاد می‌شود

@@ -1,13 +1,14 @@
 package GalexyExam;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Galexy {
     private String Name;
     private List<Planet> Planets= new ArrayList<>();
-    private Map<String, Planet> planetSet;
+    private Map<String, Planet> planetSet= new HashMap<>();
 
 
     //Constructors:
@@ -33,6 +34,10 @@ public class Galexy {
     public List<Planet> AddPlanet(Planet planet){
         Planets.add(planet);
         return Planets;
+    }
+    public Map<String, Planet> AddPlanettoGalexy(Planet planet){
+        planetSet.put(Name, planet);
+        return planetSet;
     }
     // متد برای آپدیت سیاره
     public void updatePlanet(Planet oldPlanet, Planet newPlanet) {

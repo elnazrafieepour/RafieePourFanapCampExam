@@ -60,7 +60,7 @@ public class DataManager {
                 if (hasLife) {
                     planet = new LifeSupportingPlanet(name, type, moons, distance, true);
                 } else if (!resources.isEmpty()) {
-                    planet = new ResourceRichPlanet(name, true);
+                    planet = new ResourceRichPlanet(name, type, moons, distance,true);
                 } else {
                     planet = new Planet(name, false);
                 }

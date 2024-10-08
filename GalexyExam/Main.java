@@ -10,40 +10,40 @@ public class Main {
 
     public static void main(String[] args) {
         DataManager.loadData(galexies, dataFile);
-        int choice;
+        String choice;
 
         do {
             System.out.println("به سیستم مدیریت کهکشان خوش آمدید!!");
-            System.out.println("1. نمایش کهکشان‌ها.");
+            System.out.println("1. نمایش کهکشان‌ها: ");
             System.out.println("2. اضافه کردن سیاره جدید");
             System.out.println("3. تغییر تعداد قمر سیاره");
             System.out.println("4. نمایش اطلاعات سیاره");
             System.out.println("5. خروج و ذخیره اطلاعات");
             System.out.print("انتخاب شما: ");
 
-            choice = Integer.parseInt(scanner.nextLine());
+            choice = scanner.nextLine();
 
             switch (choice) {
-                case 1:
+                case "1":
                     displayGalaxies();
                     break;
-                case 2:
+                case "2":
                     addNewPlanet();
                     break;
-                case 3:
+                case "3":
                     changeMoonCount();
                     break;
-                case 4:
+                case "4":
                     displayPlanetInfo();
                     break;
-                case 5:
+                case "5":
                     DataManager.saveData(galexies, dataFile);
                     System.out.println("خداحافظ.. اطلاعات با موفقیت ذخیره شد!");
                     break;
                 default:
                     System.out.println("انتخاب نامعتبر. لطفاً دوباره تلاش کنید.");
             }
-        } while (choice != 5);
+        } while (choice != "5");
     }
 
     private static void displayGalaxies() {
@@ -73,11 +73,14 @@ public class Main {
         System.out.print("نوع سیاره (سنگی/گازی): ");
         String typeInput = scanner.nextLine();
 
+
         PlanetType type;
         if (typeInput.equalsIgnoreCase("سنگی") || typeInput.equalsIgnoreCase("سنگ") || typeInput.equalsIgnoreCase("Rock")) {
             type = PlanetType.ROCKY;
+
         } else if (typeInput.equalsIgnoreCase("گازی") || typeInput.equalsIgnoreCase("Gas")) {
             type = PlanetType.GASEOUS;
+
         } else {
             System.out.println("نوع سیاره نامعتبر است. باید 'سنگی' یا 'گازی' باشد.");
             return;
@@ -107,7 +110,7 @@ public class Main {
         if (hasLife) {
             newPlanet = new LifeSupportingPlanet(name, type, moons, distance, true);
         } else if (!resources.isEmpty()) {
-            newPlanet = new ResourceRichPlanet(name, true);
+            newPlanet = new ResourceRichPlanet(name, type, moons, distance, true);
         } else {
             newPlanet = new Planet(name, false);
         }
@@ -119,6 +122,7 @@ public class Main {
         }
 
         galaxy.AddPlanet(newPlanet);
+        galaxy.AddPlanettoGalexy(newPlanet);
         System.out.println("سیاره جدید با نام \"" + name + "\" اضافه شد.\n");
     }
 
